@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 3 – Ticket Builder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task3.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Task 3 – Ticket Builder</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="task1.html">Task 1</a>
+      <a href="task2.html">Task 2</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="layout">
+      <section class="card">
+        <h2>Book a ticket</h2>
+        <div id="error-summary" class="message error hidden" role="alert" tabindex="-1"></div>
+
+        <form id="ticket-form" novalidate>
+          <div class="field">
+            <label for="event">Event</label>
+            <select id="event" name="event" required aria-describedby="error-event">
+              <option value="">— choose an event —</option>
+            </select>
+            <p class="error-msg" id="error-event"></p>
+          </div>
+
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required aria-describedby="error-date">
+            <p class="error-msg" id="error-date"></p>
+          </div>
+
+          <div class="field">
+            <label for="type">Ticket type</label>
+            <select id="type" name="type" required aria-describedby="error-type">
+              <option value="">— choose a type —</option>
+            </select>
+            <p class="error-msg" id="error-type"></p>
+          </div>
+
+          <div class="field">
+            <label for="quantity">Quantity</label>
+            <input id="quantity" name="quantity" type="number" min="1" max="10" step="1" required aria-describedby="error-quantity">
+            <p class="error-msg" id="error-quantity"></p>
+          </div>
+
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="error-fullName">
+            <p class="error-msg" id="error-fullName"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="error-email">
+            <p class="error-msg" id="error-email"></p>
+          </div>
+
+          <div class="field">
+            <label for="promo">Promo code (optional)</label>
+            <input id="promo" name="promo" type="text" autocomplete="off" aria-describedby="error-promo">
+            <p class="error-msg" id="error-promo"></p>
+          </div>
+
+          <button class="btn" type="submit">Get ticket</button>
+        </form>
+      </section>
+
+      <aside>
+        <section class="card preview" aria-live="polite">
+          <h2>Live preview</h2>
+          <dl>
+            <dt>Event</dt><dd id="pv-event">—</dd>
+            <dt>Date</dt><dd id="pv-date">—</dd>
+            <dt>Type</dt><dd id="pv-type">—</dd>
+            <dt>Quantity</dt><dd id="pv-quantity">—</dd>
+            <dt>Name</dt><dd id="pv-fullName">—</dd>
+            <dt>Email</dt><dd id="pv-email">—</dd>
+            <dt>Discount</dt><dd id="pv-discount">—</dd>
+            <dt>Total</dt><dd id="pv-total">—</dd>
+          </dl>
+        </section>
+
+        <section class="card">
+          <h2>Result</h2>
+          <div id="result"><p class="empty">No ticket yet. Fill in the form.</p></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

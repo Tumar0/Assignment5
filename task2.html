@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 2 – Kanban Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task2.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Task 2 – Kanban Board</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="task1.html">Task 1</a>
+      <a href="task3.html">Task 3</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row">
+        <div>
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Title contains…">
+        </div>
+        <div>
+          <label for="tag-filter">Tag</label>
+          <select id="tag-filter"></select>
+        </div>
+        <div>
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="priority">Priority (high first)</option>
+            <option value="title">Title (A–Z)</option>
+            <option value="hours">Hours (most first)</option>
+          </select>
+        </div>
+      </div>
+
+      <p><label for="progress">Progress: <span id="progress-text"></span></label></p>
+      <progress id="progress" max="1" value="0"></progress>
+
+      <div id="message" class="message hidden" role="status"></div>
+    </section>
+
+    <p id="nothing-found" class="empty hidden">Nothing found. Change the search or the tag filter.</p>
+
+    <!-- Only an empty container: cards are built by JavaScript -->
+    <div id="board" class="board"></div>
+  </main>
+</body>
+</html>

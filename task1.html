@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1 – Code Breaker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task1.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Task 1 – Code Breaker</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="task2.html">Task 2</a>
+      <a href="task3.html">Task 3</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card" id="game">
+      <h2>Crack the secret code</h2>
+      <p id="rules"></p>
+
+      <div class="stats">
+        <span>Attempts left: <span id="attempts-left"></span></span>
+        <span>Wins: <span id="wins">0</span></span>
+        <span>Losses: <span id="losses">0</span></span>
+      </div>
+
+      <form id="guess-form" novalidate>
+        <div class="row">
+          <div>
+            <label for="guess">Your guess</label>
+            <input id="guess" type="text" inputmode="numeric" autocomplete="off" aria-describedby="message">
+          </div>
+          <button class="btn" type="submit" id="guess-btn">Guess</button>
+          <button class="btn secondary" type="button" id="restart-btn">New game</button>
+        </div>
+      </form>
+
+      <div id="message" class="message hidden" role="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>History</h2>
+      <ul id="history" class="history"></ul>
+      <p id="empty-history" class="empty">No guesses yet.</p>
+    </section>
+  </main>
+</body>
+</html>
